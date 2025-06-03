@@ -1,0 +1,117 @@
+@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+
+.my-global-style {
+  color: red;
+  font-weight: bold;
+}
+:root {
+  /* Couleurs principales */
+  --primary: #042433;
+  --secondary: #3da5d9;
+  --accent: #00a6fb;
+  --background: #ffffff;
+  --foreground: #333333;
+
+  /* Tailles de texte */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-md: 1rem;
+  --text-lg: 1.125rem;
+
+  /* Espacements */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+
+  /* Arrondis */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-full: 9999px;
+
+  /* Conteneur */
+  --container-width: 1220px;
+
+  /* Polices */
+  --font-sans: "Montserrat", sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #ffffff;
+    --foreground: #ededed;
+    --primary: #002639;
+  }
+}
+
+/* @layer base {
+  body {
+    @apply text-foreground bg-background;
+    font-weight: 500;
+    font-family: var(--font-sans);
+  }
+} */
+
+/* Classes utilitaires personnalisées */
+.container {
+  max-width: var(--container-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.text-primary {
+  color: var(--primary);
+}
+
+.text-secondary {
+  color: var(--secondary);
+}
+
+.bg-primary {
+  background-color: var(--primary);
+}
+
+.bg-secondary {
+  background-color: var(--secondary);
+}
+
+/* @layer components {
+  .container-custom {
+    @apply max-w-[1220px] mx-auto px-4;
+  }
+
+  .btn-primary {
+    @apply bg-[#042433] text-white rounded-full inline-flex items-center gap-2 px-6 py-3 font-medium transition-all hover:bg-opacity-90;
+  }
+
+  .nav-link {
+    @apply transition-colors;
+  }
+
+  .nav-link:hover,
+  .nav-link.active {
+    @apply text-secondary;
+  }
+
+  .social-icon {
+    @apply transition-opacity hover:opacity-80;
+  }
+} */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
