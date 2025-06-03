@@ -11,7 +11,11 @@ export default function Home() {
     <>
       <HeroBanner />
       <Stats />
-      <SectorsSection />     
+      <SectorsSection />
+      <AboutSection />
+      <PartnersSection />
+      <TeamSection />
+      <TestimonialsSection />
     </>
   )
 }
