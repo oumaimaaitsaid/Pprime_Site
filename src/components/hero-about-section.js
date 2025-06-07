@@ -4,7 +4,12 @@ import { useEffect, useState } from "react"
 import Image from "next/image"
 
 export default function HeroAboutSection() {
- 
+  const [isVisible, setIsVisible] = useState(false)
+
+  useEffect(() => {
+    setIsVisible(true)
+  }, [])
+
   
 
   return (
