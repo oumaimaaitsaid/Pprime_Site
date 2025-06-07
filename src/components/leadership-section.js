@@ -1,4 +1,32 @@
+"use client"
 
+import { useEffect, useState } from "react"
+import Image from "next/image"
+
+export default function LeadershipSection() {
+  const [isVisible, setIsVisible] = useState(false)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true)
+        }
+      },
+      { threshold: 0.1 },
+    )
+
+    const element = document.getElementById("leadership-section")
+    if (element) {
+      observer.observe(element)
+    }
+
+    return () => {
+      if (element) {
+        observer.unobserve(element)
+      }
+    }
+  }, [])
 
   return (
     <section id="leadership-section" className="flex min-h-[500px] lg:min-h-[800px]">
