@@ -45,7 +45,29 @@ export default function LeadershipSection() {
             <br />à travers le Maroc et au-delà.
           </h2>
 
-          
+          <div className="space-y-6">
+            <div>
+              <h3 className="text-base lg:text-lg font-bold mb-3 text-white">Stratégie et gouvernance</h3>
+              <p className="text-sm lg:text-base text-white/90 leading-relaxed">
+                Depuis plus de 20 ans, PPrime s'est imposée comme un acteur clé dans le domaine des installations
+                électriques et des technologies vertes. Notre stratégie repose sur l'innovation, la qualité de service
+                et l'accompagnement durable de nos clients. Elle soutient les projets les plus exigeants, valorise
+                l'efficacité énergétique et favorise des solutions durables.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-base lg:text-lg font-bold text-white">Leadership</h3>
+            </div>
+
+            <div>
+              <h3 className="text-base lg:text-lg font-bold text-white">Priorités et partenariats</h3>
+            </div>
+
+            <div>
+              <h3 className="text-base lg:text-lg font-bold text-white">Priorités et partenariats</h3>
+            </div>
+          </div>
         </div>
       </div>
     </section>
