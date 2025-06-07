@@ -14,7 +14,7 @@ export default function SectorsSection() {
       title: "Agriculture & Agroalimentaire",
       description:
         "Services d'installations, d'éclairage et d'automatisation adaptés aux besoins spécifiques de l'agriculture et de la sécurité électrique, fournissons des solutions d'alimentation pour les équipements agricoles et les systèmes renouvelables, contribuant ainsi à l'efficacité et à la durabilité des exploitations.",
-      image: "/images/sectors/agriculature.jpg", // Chemin vers votre vraie image
+      image: "/images/sectors/agriculture.jpg", // Chemin vers votre vraie image
       link: "/secteurs-activite/agriculture",
     },
     {
