@@ -37,7 +37,16 @@ export default function LeadershipSection() {
 
       {/* Contenu à droite - 50% */}
       <div className="w-1/2 bg-[#042433] text-white px-8 py-12 lg:px-16 lg:py-16 flex flex-col justify-center">
-       
+        <div
+          className={`transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+        >
+          <h2 className="text-2xl lg:text-3xl xl:text-4xl font-bold mb-8 leading-tight">
+            Nous avons un impact positif
+            <br />à travers le Maroc et au-delà.
+          </h2>
+
+          
+        </div>
       </div>
     </section>
   )
