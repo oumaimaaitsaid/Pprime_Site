@@ -4,7 +4,7 @@ import { useState } from "react"
 import Link from "next/link"
 import NextImage from "next/image"
 import { Phone, Mail, MapPin, Menu, X, ArrowUpRight } from "lucide-react"
-import { CONTACT_INFO, SOCIAL_LINKS } from "@/lib/constants"
+import { CONTACT_INFO, SOCIAL_LINKS } from "../lib/constants"
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
