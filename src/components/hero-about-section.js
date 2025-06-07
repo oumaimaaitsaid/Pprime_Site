@@ -10,7 +10,31 @@ export default function HeroAboutSection() {
     setIsVisible(true)
   }, [])
 
-  
+  const features = [
+    {
+        image: "/images/about/user.png", 
+        title: "Équipes Dédiées",
+      description: "Engagés à aider nos clients à atteindre leurs objectifs, à personnaliser leurs expériences",
+    },
+    {
+      image: "/images/about/handshake.png", 
+      title: "Vrais Partenaires",
+      description:
+        "Notre fort sentiment d'identification avec les projets des clients signifie que nous nous efforçons constamment",
+    },
+    {
+      image: "/images/about/globe.png", 
+      title: "Savoir-faire Mondial",
+      description:
+        "Ils ne sont pas encore au courant. Nous adoptons une approche progressive de la technologie et des techniques du marketing",
+    },
+    {
+      image: "/images/about/innovation.png", 
+      title: "Concentrez-vous sur l'innovation",
+      description:
+        "Ce sentiment d'identification signifie également que nous valorisons et promouvons une interaction fluide",
+    },
+  ]
 
   return (
     <div className="relative w-full h-[calc(130vh-100px)] mb-60 bg-gray-50">
