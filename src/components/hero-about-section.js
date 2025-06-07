@@ -38,7 +38,16 @@ export default function HeroAboutSection() {
 
   return (
     <div className="relative w-full h-[calc(130vh-100px)] mb-60 bg-gray-50">
-     
+      {/* Image de fond à 80% */}
+      <div className="relative w-full top-0  h-[100vh]">
+        <Image
+          src="/images/hero-about-bg.jpg"
+          alt="Panneaux solaires et éoliennes"
+          fill
+          className="object-cover"
+          priority
+        />
+      </div>
 
       {/* Bloc bleu en bas */}
       <div className="absolute top-120 max-w-[1220px] left-[150px] right-[150px] bg-[#042433] text-white h-[600px] flex items-center">
