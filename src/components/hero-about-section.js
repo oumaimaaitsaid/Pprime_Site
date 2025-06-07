@@ -86,6 +86,7 @@ export default function HeroAboutSection() {
                     />
                   )}
                 
+                  {feature.icon && !feature.image && <feature.icon className="w-12 h-12 text-[#3da5d9]" />}
                 </div>
                 <h3 className="text-lg font-bold mb-3">{feature.title}</h3>
                 <p className="text-xs text-[#CBCBCB] leading-relaxed">{feature.description}</p>
