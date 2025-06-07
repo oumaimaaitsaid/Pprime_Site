@@ -43,7 +43,20 @@ export default function HeroAboutSection() {
       {/* Bloc bleu en bas */}
       <div className="absolute top-120 max-w-[1220px] left-[150px] right-[150px] bg-[#042433] text-white h-[600px] flex items-center">
         <div className="max-w-[1000px] mx-auto w-full px-6 md:px-10 flex flex-col lg:flex-row justify-between items-start gap-10">
-         
+          {/* Titre à gauche */}
+          <div
+            className={`w-full lg:w-1/2 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+          >
+            <h1 className="text-2xl md:text-4xl font-bold text-white leading-tight">
+              Nous sommes
+              <br />
+              étroitement
+              <br />
+              connectés à nos
+              <br />
+              communautés.
+            </h1>
+          </div>
 
           {/* Grille de fonctionnalités à droite */}
           <div className="w-full lg:w-1/2 grid grid-cols-1 md:grid-cols-2 gap-14">
