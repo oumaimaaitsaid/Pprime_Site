@@ -1,5 +1,5 @@
 import { type NextRequest, NextResponse } from "next/server"
-import nodemailer from  "nodemailer"
+import nodemailer from "nodemailer"
 
 export async function POST(request: NextRequest) {
   try {
@@ -10,12 +10,11 @@ export async function POST(request: NextRequest) {
     const phone = formData.get("phone") as string
     const cvFile = formData.get("cv") as File | null
 
-    // Validation des données
-    if (!name || !email || !phone) {
-      return NextResponse.json({ error: "Tous les champs sont requis" }, { status: 400 })
-    }
+    // Log des variables d'environnement
+    console.log("SMTP_HOST:", process.env.SMTP_HOST)
+    console.log("SMTP_PORT:", process.env.SMTP_PORT)
 
-    // Configuration nodemailer
+    // CORRECTION: createTransport au lieu de createTransporter
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
       port: Number.parseInt(process.env.SMTP_PORT || "587"),
@@ -46,7 +45,7 @@ export async function POST(request: NextRequest) {
         <p><strong>Nom:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
         <p><strong>Téléphone:</strong> ${phone}</p>
-        ${cvFile ? `<p><strong>CV:</strong> Voir pièce jointe (${cvFile.name})</p>` : "<p><em>Aucun CV joint</em></p>"}
+        ${cvFile ? `<p><strong>CV:</strong> Voir pièce jointe</p>` : "<p><em>Aucun CV joint</em></p>"}
         <p><em>Candidature reçue le ${new Date().toLocaleString("fr-FR")}</em></p>
       `,
       attachments: attachments,
