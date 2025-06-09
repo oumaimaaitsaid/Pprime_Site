@@ -1,80 +1,66 @@
 import Image from "next/image"
-import Link from "next/link"
 
 export default function SectorsSection() {
   const sectors = [
     {
       title: "Infrastructures & Industrie",
       description:
-        "Services d'installation, de distribution, d'éclairage, d'automatisation, de sécurité électrique, de maintenance et d'efficacité énergétique pour soutenir le bon fonctionnement et la durabilité des Sites industriels et des infrastructures critiques.",
-      image: "/images/sectors/infrastructures.jpg", // Chemin vers votre vraie image
+        "Services d'installation, de distribution, d'éclairage, d'automatisation, de sécurité électrique, de maintenance et d'efficacité énergétique pour soutenir le bon fonctionnement et la durabilité des sites industriels et des infrastructures critiques.",
+      image: "/images/sectors/infrastructures.jpg",
       link: "/secteurs-activite/infrastructures",
     },
     {
       title: "Agriculture & Agroalimentaire",
       description:
-        "Services d'installations, d'éclairage et d'automatisation adaptés aux besoins spécifiques de l'agriculture et de la sécurité électrique, fournissons des solutions d'alimentation pour les équipements agricoles et les systèmes renouvelables, contribuant ainsi à l'efficacité et à la durabilité des exploitations.",
-      image: "/images/sectors/agriculture.jpg", // Chemin vers votre vraie image
+        "Services d'installation, d'éclairage et d'automatisation adaptés aux besoins agricoles. Nous assurons également la sécurité électrique, fournissons des solutions d'alimentation pour les équipements et intégrons des énergies renouvelables, contribuant ainsi à l'efficacité et à la durabilité des exploitations.",
+      image: "/images/sectors/agriculture.jpg",
       link: "/secteurs-activite/agriculture",
     },
     {
       title: "Green Tech",
       description:
         "Des services axés sur les énergies renouvelables, l'efficacité énergétique et les technologies intelligentes pour promouvoir la durabilité et la transition vers un avenir énergétique propre.",
-      image: "/images/sectors/green-tech.jpg", // Chemin vers votre vraie image
+      image: "/images/sectors/green-tech.jpg",
       link: "/secteurs-activite/green-tech",
     },
     {
       title: "Tertiaire",
       description:
-        "Des services spécialisés pour garantir la sécurité, la fiabilité, l'efficacité énergétique et le confort dans les bureaux, les établissements touristiques, les hôpitaux, les cliniques et autres installations de santé.",
-      image: "/images/sectors/tertiaire.jpg", // Chemin vers votre vraie image
+        "Des services spécialisés pour garantir la sécurité, la fiabilité, l'efficacité énergétique et la continuité des opérations dans les établissements touristiques, les hôpitaux, les cliniques et autres installations de santé.",
+      image: "/images/sectors/tertiaire.jpg",
       link: "/secteurs-activite/tertiaire",
     },
   ]
 
   return (
-    <section className="py-20 bg-gray-50">
-      <div className="max-w-[1220px] mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-[#042433] mb-4">Secteurs d'activité</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-            Ensemble, pour un monde plus lumineux, vert et intelligent.
-          </p>
+    <section className="py-20">
+      <div className="max-w-[1220px]  mx-auto px-6 ">
+        <div className="text-center mb-10 ">
+          <h2 className="text-3xl font-bold text-[#042433] mb-2">Secteurs d'activité</h2>
+          <p className="text-gray-600 max-w-2xl mx-auto">Ensemble, pour un monde plus lumineux, vert et intelligent.</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        {/* Grille 2x2 exactement comme dans l'image */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 ">
           {sectors.map((sector, index) => (
-            <div key={index} className="flex gap-6 group">
-              {/* Image à gauche */}
-              <div className="flex-shrink-0">
-                <div className="w-32 h-24 md:w-40 md:h-28 rounded-lg overflow-hidden bg-blue-100">
+            <div key={index} className="flex h-[340px] border border-gray-200 ">
+              {/* Image à gauche sur fond bleu pâle */}
+              <div className="w-1/3 bg-[#e6f0f5] p-0 flex items-center justify-center">
+                <div className="relative w-full h-full">
                   <Image
                     src={sector.image || "/placeholder.svg"}
                     alt={sector.title}
-                    width={160}
-                    height={112}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    priority={index < 2} // Charge en priorité les 2 premières images
+                    fill
+                    className="object-contain"
+                    priority={index < 2}
                   />
                 </div>
               </div>
 
-              {/* Contenu à droite */}
-              <div className="flex-1">
-                <h3 className="text-xl font-bold text-[#042433] mb-3 group-hover:text-[#3da5d9] transition-colors">
-                  {sector.title}
-                </h3>
-                <p className="text-gray-600 text-sm leading-relaxed mb-4">{sector.description}</p>
-                <Link
-                  href={sector.link}
-                  className="inline-flex items-center gap-2 text-[#3da5d9] font-semibold text-sm hover:gap-3 transition-all"
-                >
-                  En savoir plus
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </Link>
+              {/* Texte à droite sur fond blanc */}
+              <div className="w-2/3 bg-gray-50 p-6 ">
+                <h3 className="text-xl font-bold text-[#042433] mb-30">{sector.title}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed ">{sector.description}</p>
               </div>
             </div>
           ))}
