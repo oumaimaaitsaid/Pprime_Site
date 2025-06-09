@@ -15,16 +15,16 @@ export default function HeroBanner() {
       </div>
 
       {/* Bloc bleu en bas */}
-<div className="absolute top-[110%] w-full bg-[#042433] text-white py-10">
-<div className="max-w-[1220px] mx-auto w-full px-4 sm:px-6 md:px-10 flex flex-col md:flex-row justify-between items-start md:items-center gap-10">
+      <div className="absolute top-120 max-w-[1220px] left-[124px] right-[124px] bg-[#042433] text-white h-[350px] flex items-center">
+        <div className="max-w-[1480px] mx-auto w-full px-6 md:px-10 flex flex-col md:flex-row justify-between items-start md:items-center gap-10">
           {/* Texte gauche */}
-          <div className="w-full md:w-1/2 text-xl sm:text-2xl md:text-3xl font-bold leading-snug text-center md:text-left">
+          <div className="w-full md:w-1/2 text-2xl md:text-3xl font-bold leading-snug">
             Experts en installations électriques,<br />
             nous proposons nos services dans une variété de domaines
           </div>
 
           {/* Texte droit + bouton */}
-          <div className="w-full md:w-1/3 text-sm leading-relaxed text-center md:text-left">
+          <div className="w-full md:w-1/3 text-sm leading-relaxed">
             <p className="mb-6">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
               labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
