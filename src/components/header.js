@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { usePathname } from "next/navigation"
 import Link from "next/link"
 import NextImage from "next/image"
 import { Phone, Mail, MapPin, Menu, X, ArrowUpRight } from "lucide-react"
@@ -8,6 +9,7 @@ import { CONTACT_INFO, SOCIAL_LINKS } from "../lib/constants"
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const pathname =usePathname()
 
   return (
      <header className="absolute top-0 left-0 w-full z-50">
@@ -71,19 +73,36 @@ export default function Header() {
           {/* Navigation desktop */}
           <div className="hidden md:flex items-center justify-between flex-1.5 ml-2">
             <div className="flex space-x-8">
-              <Link href="/" className="text-[#3da5d9] hover:text-[#3da5d9] transition-colors text-md font-bold mt-2">
+              <Link href="/" 
+             className={`transition-colors text-md font-bold mt-2 ${
+                  pathname === "/" ? "text-[#3da5d9]" : "text-[#002639] hover:text-[#3da5d9]"
+                }`}
+              >
                 Accueil
               </Link>
-              <Link href="/a-propos" className="text-[#002639] hover:text-[#3da5d9] transition-colors text-md font-bold mt-2">
-                à propos
+              <Link href="/a-propos" 
+ className={`transition-colors text-md font-bold mt-2 ${
+                  pathname === "/a-propos" ? "text-[#3da5d9]" : "text-[#002639] hover:text-[#3da5d9]"
+                }`}
+              >                à propos
               </Link>
-              <Link href="/offres" className="text-[#002639] hover:text-[#3da5d9] transition-colors text-md font-bold mt-2">
-                Offres
+              <Link href="/offres" 
+className={`transition-colors text-md font-bold mt-2 ${
+                  pathname === "/offres" ? "text-[#3da5d9]" : "text-[#002639] hover:text-[#3da5d9]"
+                }`}
+              >                Offres
               </Link>
-              <Link href="/secteurs-activite" className="text-[#002639] hover:text-[#3da5d9] transition-colors text-md font-bold mt-2">
-                Secteurs d&apos;activité
+              <Link href="/secteurs-activite" 
+className={`transition-colors text-md font-bold mt-2 ${
+                  pathname === "/secteurs-activite" ? "text-[#3da5d9]" : "text-[#002639] hover:text-[#3da5d9]"
+                }`}
+              >                Secteurs d&apos;activité
               </Link>
-              <Link href="/nous-rejoindre" className="text-[#002639] hover:text-[#3da5d9] transition-colors text-md font-bold mt-2">
+              <Link href="/nous-rejoindre" 
+                className={`transition-colors text-md font-bold mt-2 ${
+                  pathname === "/nous-rejoindre" ? "text-[#3da5d9]" : "text-[#002639] hover:text-[#3da5d9]"
+                }`}
+              >
                 Nous rejoindre
               </Link>
                <Link
@@ -110,19 +129,38 @@ export default function Header() {
         {isMenuOpen && (
           <div className="md:hidden absolute z-50 bg-white w-full left-0 shadow-md py-4 px-4">
             <div className="flex flex-col gap-4">
-              <Link href="/" className="text-[#3da5d9] hover:text-[#3da5d9] transition-colors text-sm">
-                Accueil
+              <Link href="/" 
+className={`transition-colors text-sm ${
+                  pathname === "/" ? "text-[#3da5d9]" : "text-[#002639] hover:text-[#3da5d9]"
+                }`}
+              >                Accueil
               </Link>
-              <Link href="/a-propos" className="text-[#002639] hover:text-[#3da5d9] transition-colors text-sm">
+              <Link href="/a-propos" 
+                className={`transition-colors text-sm ${
+                  pathname === "/a-propos" ? "text-[#3da5d9]" : "text-[#002639] hover:text-[#3da5d9]"
+                }`}
+              >
                 à propos
               </Link>
-              <Link href="/offres" className="text-[#002639] hover:text-[#3da5d9] transition-colors text-sm">
+              <Link href="/offres" 
+                className={`transition-colors text-sm ${
+                  pathname === "/offres" ? "text-[#3da5d9]" : "text-[#002639] hover:text-[#3da5d9]"
+                }`}
+              >
                 Offres
               </Link>
-              <Link href="/secteurs-activite" className="text-[#002639] hover:text-[#3da5d9] transition-colors text-sm">
+              <Link href="/secteurs-activite" 
+                className={`transition-colors text-sm ${
+                  pathname === "/secteurs-activite" ? "text-[#3da5d9]" : "text-[#002639] hover:text-[#3da5d9]"
+                }`}
+              >
                 Secteurs d&apos;activité
               </Link>
-              <Link href="/nous-rejoindre" className="text-[#002639] hover:text-[#3da5d9] transition-colors text-sm">
+              <Link href="/nous-rejoindre" 
+                className={`transition-colors text-sm ${
+                  pathname === "/nous-rejoindre" ? "text-[#3da5d9]" : "text-[#002639] hover:text-[#3da5d9]"
+                }`}
+              >
                 Nous rejoindre
               </Link>
               <Link
