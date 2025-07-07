@@ -35,7 +35,7 @@ const solutions = [
 
 export default function PprimeSolutions() {
   return (
-    <section className="py-35 bg-white">
+    <section className="py-20 bg-white">
       <div className="max-w-[1220px] mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
           {solutions.slice(0, 3).map((solution, index) => {
@@ -43,7 +43,7 @@ export default function PprimeSolutions() {
             return (
               <div
                 key={index}
-                className="bg-white p-8 shadow-sm border-l-4 border-[#042433] hover:shadow-md transition-shadow"
+                className="bg-white p-8 shadow-sm border-l-4 border-[#042433] hover:shadow-[#042433] transition-shadow"
               >
                 <div className="flex items-center gap-4 mb-6">
                   <div className="w-12 h-12 bg-[#3da5d9]/10 rounded-lg flex items-center justify-center">
@@ -63,7 +63,7 @@ export default function PprimeSolutions() {
             return (
               <div
                 key={index + 3}
-                className="bg-white p-8  shadow-sm border-l-4 border-[#042433] hover:shadow-md transition-shadow"
+                className="bg-white p-8  shadow-sm border-l-4 border-[#042433] hover:shadow-[#042433] transition-shadow"
               >
                 <div className="flex items-center gap-4 mb-6">
                   <div className="w-12 h-12 bg-[#3da5d9]/10 rounded-lg flex items-center justify-center">
