@@ -43,9 +43,9 @@ export default function TestimonialsSection() {
     <section className="py-20 bg-white">
       <div className="max-w-[1220px] mx-auto px-6">
         <div className="flex flex-col lg:flex-row items-start gap-12">
-          {/* Contenu texte à gauche */}
-          <div className="lg:w-1/2">
-            <h2 className="text-4xl font-bold text-[#042433] mb-6">
+          {/* Contenu texte à gauche - sur mobile devient le contenu principal */}
+          <div className="w-full lg:w-1/2">
+            <h2 className="text-3xl lg:text-4xl font-bold text-[#042433] mb-6">
               Que Disent Nos
               <br />
               Clients Précieux
@@ -56,8 +56,8 @@ export default function TestimonialsSection() {
               ea commodo consequat.
             </p>
 
-            {/* Navigation */}
-            <div className="flex items-center gap-4">
+            {/* Navigation desktop uniquement */}
+            <div className="hidden lg:flex items-center gap-4">
               <button
                 onClick={prevTestimonial}
                 className="p-3 rounded-full border border-gray-300 hover:bg-[#042433] hover:text-white transition-colors"
@@ -75,10 +75,10 @@ export default function TestimonialsSection() {
             </div>
           </div>
 
-          {/* Photo et témoignage à droite - Exactement comme le Figma */}
-          <div className="lg:w-1/2">
-            <div className="flex bg-white rounded-lg shadow-lg overflow-hidden items-stretch">
-              {/* Photo à gauche */}
+          {/* Photo et témoignage à droite */}
+          <div className="w-full lg:w-1/2">
+            {/* Version desktop avec image */}
+            <div className="hidden lg:flex bg-white rounded-lg shadow-lg overflow-hidden items-stretch">
               <div className="flex-shrink-0">
                 <Image
                   src={testimonials[currentTestimonial].image || "/placeholder.svg?height=250&width=200"}
@@ -88,8 +88,6 @@ export default function TestimonialsSection() {
                   className="object-cover w-full h-full"
                 />
               </div>
-
-              {/* Témoignage à droite dans le même bloc */}
               <div className="bg-[#B0C6CE] p-6 flex-1 flex flex-col justify-center">
                 <p className="text-[#042433] leading-relaxed mb-4 text-sm">
                   {testimonials[currentTestimonial].content}
@@ -98,6 +96,35 @@ export default function TestimonialsSection() {
                   <h4 className="font-bold text-[#042433] text-base">{testimonials[currentTestimonial].name}</h4>
                   <p className="text-[#042433]/70 text-xs">{testimonials[currentTestimonial].role}</p>
                 </div>
+              </div>
+            </div>
+
+            {/* Version mobile sans image */}
+            <div className="lg:hidden bg-[#B0C6CE] p-6 rounded-lg">
+              <p className="text-[#042433] leading-relaxed mb-4 text-sm">{testimonials[currentTestimonial].content}</p>
+              <div>
+                <h4 className="font-bold text-[#042433] text-base">{testimonials[currentTestimonial].name}</h4>
+                <p className="text-[#042433]/70 text-xs">{testimonials[currentTestimonial].role}</p>
+              </div>
+            </div>
+
+            {/* Navigation mobile en bas */}
+            <div className="lg:hidden mt-6">
+              <div className="flex items-center justify-center gap-4 mb-4">
+                <button
+                  onClick={prevTestimonial}
+                  className="p-3 rounded-full border border-gray-300 hover:bg-[#042433] hover:text-white transition-colors"
+                  aria-label="Témoignage précédent"
+                >
+                  <ChevronLeft className="w-5 h-5" />
+                </button>
+                <button
+                  onClick={nextTestimonial}
+                  className="p-3 rounded-full bg-[#042433] text-white hover:bg-opacity-90 transition-colors"
+                  aria-label="Témoignage suivant"
+                >
+                  <ChevronRight className="w-5 h-5" />
+                </button>
               </div>
             </div>
 

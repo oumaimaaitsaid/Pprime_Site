@@ -1,4 +1,5 @@
 import Image from "next/image"
+import Link from "next/link"
 
 export default function SectorsSection() {
   const sectors = [
@@ -34,35 +35,44 @@ export default function SectorsSection() {
 
   return (
     <section className="py-20">
-      <div className="max-w-[1220px]  mx-auto px-6 ">
-        <div className="text-center mb-10 ">
+      <div className="max-w-[1220px] mx-auto px-6">
+        <div className="text-center mb-10">
           <h2 className="text-3xl font-bold text-[#042433] mb-2">Secteurs d'activité</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">Ensemble, pour un monde plus lumineux, vert et intelligent.</p>
         </div>
 
-        {/* Grille 2x2 exactement comme dans l'image */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 ">
+        {/* Grille responsive */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {sectors.map((sector, index) => (
-            <div key={index} className="flex h-[340px] border border-gray-200 ">
-              {/* Image à gauche sur fond bleu pâle */}
-              <div className="w-1/3 bg-[#e6f0f5] p-0 flex items-center justify-center">
-                <div className="relative w-full h-full">
-                  <Image
-                    src={sector.image || "/placeholder.svg"}
-                    alt={sector.title}
-                    fill
-                    className="object-contain"
-                    priority={index < 2}
-                  />
+            <Link
+              key={index}
+              href={sector.link}
+              className="group block border border-gray-200 hover:shadow-lg transition-shadow duration-300"
+            >
+              {/* Layout mobile : vertical, desktop : horizontal */}
+              <div className="flex flex-col md:flex-row h-auto md:h-[340px]">
+                {/* Image */}
+                <div className="w-full md:w-1/3 bg-[#e6f0f5] p-4 flex items-center justify-center min-h-[200px] md:min-h-0">
+                  <div className="relative w-full h-full max-w-[200px] md:max-w-none">
+                    <Image
+                      src={sector.image || "/placeholder.svg?height=200&width=200"}
+                      alt={sector.title}
+                      fill
+                      className="object-contain"
+                      priority={index < 2}
+                    />
+                  </div>
+                </div>
+
+                {/* Contenu texte */}
+                <div className="w-full md:w-2/3 bg-gray-50 p-6 flex flex-col justify-center">
+                  <h3 className="text-xl font-bold text-[#042433] mb-4 group-hover:text-[#0a5a73] transition-colors">
+                    {sector.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">{sector.description}</p>
                 </div>
               </div>
-
-              {/* Texte à droite sur fond blanc */}
-              <div className="w-2/3 bg-gray-50 p-6 ">
-                <h3 className="text-xl font-bold text-[#042433] mb-30">{sector.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed ">{sector.description}</p>
-              </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

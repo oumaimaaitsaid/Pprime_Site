@@ -53,22 +53,24 @@ export default function Stats() {
   return (
     <section id="stats-section" className="py-16 bg-gray-50">
       <div className="max-w-[1220px] mx-auto px-6">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
           {stats.map((stat, index) => (
-            <div key={index} className="text-center">
-              <div className="mb-2">
-                <p className="text-sm text-gray-600 mb-3">{stat.label}</p>
-                <span
-                  className={`text-4xl md:text-5xl lg:text-6xl font-bold text-[#042433] transition-all duration-1000 ${
-                    isVisible ? "opacity-100" : "opacity-0"
-                  }`}
-                  style={{
-                    transitionDelay: `${index * 200}ms`,
-                  }}
-                >
-                  <CountUpNumber end={Number.parseInt(stat.number)} duration={2000} start={isVisible} />
-                  <span className="text-[#3da5d9]">{stat.suffix}</span>
-                </span>
+            <div key={index} className="text-center py-4">
+              <div className="flex flex-col items-center">
+                <p className="text-sm text-gray-600 mb-2 order-2">{stat.label}</p>
+                <div className="mb-1 order-1">
+                  <span
+                    className={`text-6xl md:text-5xl lg:text-6xl font-bold text-[#042433] transition-all duration-1000 ${
+                      isVisible ? "opacity-100" : "opacity-0"
+                    }`}
+                    style={{
+                      transitionDelay: `${index * 200}ms`,
+                    }}
+                  >
+                    <CountUpNumber end={Number.parseInt(stat.number)} duration={2000} start={isVisible} />
+                    <span className="text-[#3da5d9]">{stat.suffix}</span>
+                  </span>
+                </div>
               </div>
             </div>
           ))}
@@ -89,7 +91,6 @@ function CountUpNumber({ end, duration, start }) {
     const animate = (currentTime) => {
       if (!startTime) startTime = currentTime
       const progress = Math.min((currentTime - startTime) / duration, 1)
-
       setCount(Math.floor(progress * end))
 
       if (progress < 1) {

@@ -13,7 +13,7 @@ export default function Footer() {
       }}
     >
       {/* Newsletter Section */}
-      <div className="py-8 px-6">
+      <div className="py-25 px-6 md:py-8">
         <div className="bg-[#0a2533] text-white py-8 px-6 max-w-[1220px] mx-auto rounded-lg">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div>
