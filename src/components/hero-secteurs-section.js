@@ -18,31 +18,42 @@ export default function HeroSection() {
 
      
 
-      {/* Bloc bleu en bas */}
-<div className="absolute top-120 max-w-[1220px] left-4 right-4 md:left-[124px] md:right-[124px] bg-[#042433] text-white h-auto md:h-[350px] flex items-center">
-  <div className="max-w-[1000px] mx-auto w-full px-4 md:px-6 lg:px-10 flex flex-col md:flex-row justify-between items-start md:items-center gap-6 md:gap-10 py-6 md:py-0">
-    {/* Texte gauche */}
-    <div className="w-full md:w-1/2 text-xl md:text-2xl lg:text-4xl font-bold leading-snug">
-      
-      De l’énergie pour vos<br/> projets, quel que soit leur ampleur !
-    </div>
+ {/* Bloc bleu en bas */}
+      <div className="absolute bottom-0 left-4 right-4 md:left-[124px] md:right-[124px] bg-[#042433] text-white h-auto md:h-[350px] flex items-center">
+        <div className="max-w-[1000px] mx-auto w-full px-4 md:px-6 lg:px-10 flex flex-col md:flex-row justify-between items-start md:items-center gap-6 md:gap-10 py-6 md:py-0">
+          {/* Texte gauche */}
+          <div className="w-full md:w-1/2 text-lg md:text-2xl lg:text-4xl font-bold leading-snug text-center md:text-left">
+            De l'énergie pour vos
+            <br /> projets, quel que soit leur ampleur !
+          </div>
 
-    {/* Texte droit + bouton */}
-    <div className="w-full md:w-1/3 text-sm leading-relaxed">
-      {/* Paragraphe masqué sur mobile */}
-      <p className="hidden md:block mb-6">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
-      </p>
-      <Link
-        href="/contact"
-        className="inline-flex items-center gap-2 bg-white text-[#042433] px-4 py-2 md:px-6 md:py-3 rounded-full font-medium hover:bg-opacity-90 transition text-sm md:text-base"
-      >
-        Découvrez pprime →
-      </Link>
-    </div>
-  </div>
-</div>
-    </div>
+          {/* Texte droit + bouton */}
+          <div className="w-full md:w-1/3 text-sm leading-relaxed text-center md:text-left">
+            {/* Paragraphe visible sur mobile */}
+            <p className="block md:hidden mb-6 text-white/90 text-sm leading-relaxed">
+              pprime s'engage à fournir des solutions énergétiques adaptées aux besoins spécifiques de ses clients, avec
+              une équipe d'experts dédiée pour vous accompagner et garantir ainsi une alimentation énergétique fiable et
+              durable pour vos projets.
+            </p>
+
+            {/* Paragraphe complet sur desktop */}
+            <p className="hidden md:block mb-6">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+            </p>
+
+            
+            <Link
+              href="/contact"
+              className="inline-flex items-center  gap-1 bg-white text-[#042433] px-4 py-2 md:px-6 md:py-3 rounded-full  hover:bg-opacity-90 transition text-md font-bold md:text-base"
+            >
+              Découvrez pprime
+              <div className="bg-[#042433] w-8 h-8  rounded-2xl ml-2 flex items-center  ">
+                <ArrowUpRight className="w-6 h-6  text-[#fff] ml-1" />
+              </div>
+            </Link>
+          </div>
+        </div>
+      </div>    </div>
   )
 }
