@@ -34,7 +34,7 @@ export default function SectorsSection() {
   ]
 
   return (
-    <section className="py-20">
+    <section className="py-120 md:py-60 lg:py-20">
       <div className="max-w-[1220px] mx-auto px-6">
         <div className="text-center mb-10">
           <h2 className="text-3xl font-bold text-[#042433] mb-2">Secteurs d'activité</h2>
