@@ -114,28 +114,29 @@ export default function CreerSection() {
   }
 
   return (
-    <section className="min-h-screen bg-white mt-35 mb-55 py-12 px-6">
+   
+ <section className="min-h-screen bg-white mt-35 mb-55 py-12 px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
-          {/* Contenu à gauche - 1/3 */}
-          <div className="lg:col-span-1">
-            <h1 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6 leading-tight">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-12 items-start">
+          {/* Contenu à gauche - 1/3 sur desktop, pleine largeur sur mobile */}
+          <div className="lg:col-span-1 text-center lg:text-left">
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-tight">
               Quel Est Le Meilleur Travail Pour Vous Chez PRIME ?
             </h1>
-            <p className="text-gray-600 leading-relaxed">
+            <p className="text-sm md:text-base text-gray-600 leading-relaxed max-w-lg mx-auto lg:mx-0">
               Faites glisser et déposez votre CV dans le module ci-dessous ou choisissez vos propres filtres. Les offres
               d'emploi qui vous correspondent seront affichées. À vous pour maintenant !
-            </p>
+            </p> 
           </div>
 
-          {/* Formulaire à droite - 2/3 */}
+          {/* Formulaire à droite - 2/3 sur desktop, pleine largeur sur mobile */}
           <div className="lg:col-span-2">
-            <div className=" p-8">
-              <form onSubmit={handleSubmit} className="space-y-6">
-                {/* ÉTAPE 4: Ajout du message de statut */}
+            <div className="p-4 md:p-8">
+              <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
+                {/* Message de statut */}
                 {message.text && (
                   <div
-                    className={`p-4 rounded-lg ${
+                    className={`p-3 md:p-4 rounded-lg text-sm md:text-base ${
                       message.type === "success"
                         ? "bg-green-100 text-green-700 border border-green-200"
                         : "bg-red-100 text-red-700 border border-red-200"
@@ -155,7 +156,7 @@ export default function CreerSection() {
                     onChange={handleInputChange}
                     required
                     disabled={isSubmitting}
-                    className="w-full px-4 py-4 bg-[#F5F5F5] border border-gray-200  focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all text-gray-700 placeholder-gray-500 disabled:opacity-50"
+                    className="w-full px-3 md:px-4 py-3 md:py-4 bg-[#F5F5F5] border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all text-gray-700 placeholder-gray-500 disabled:opacity-50 text-sm md:text-base"
                   />
                 </div>
 
@@ -169,7 +170,7 @@ export default function CreerSection() {
                     onChange={handleInputChange}
                     required
                     disabled={isSubmitting}
-                    className="w-full px-4 py-4 bg-[#F5F5F5] border border-gray-200  focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all text-gray-700 placeholder-gray-500 disabled:opacity-50"
+                    className="w-full px-3 md:px-4 py-3 md:py-4 bg-[#F5F5F5] border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all text-gray-700 placeholder-gray-500 disabled:opacity-50 text-sm md:text-base"
                   />
                 </div>
 
@@ -183,13 +184,13 @@ export default function CreerSection() {
                     onChange={handleInputChange}
                     required
                     disabled={isSubmitting}
-                    className="w-full px-4 py-4 bg-[#F5F5F5] border border-gray-200  focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all text-gray-700 placeholder-gray-500 disabled:opacity-50"
+                    className="w-full px-3 md:px-4 py-3 md:py-4 bg-[#F5F5F5] border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all text-gray-700 placeholder-gray-500 disabled:opacity-50 text-sm md:text-base"
                   />
                 </div>
 
                 {/* Zone de dépôt CV */}
                 <div
-                  className={`border-2 bg-[#F5F5F5] h-[400px] p-26 text-center transition-all cursor-pointer ${
+                  className={`border-2 bg-[#F5F5F5] h-[250px] md:h-[400px] p-4 md:p-8 text-center transition-all cursor-pointer rounded-lg ${
                     isSubmitting
                       ? "opacity-50 cursor-not-allowed"
                       : dragActive
@@ -212,21 +213,21 @@ export default function CreerSection() {
                     disabled={isSubmitting}
                     className="hidden"
                   />
-
-                  <div className="flex flex-col items-center">
-                    <div className="w-16 h-16 mb-4 flex items-center justify-center">
-                      <Download className="w-12 h-12 text-gray-400" />
+                  <div className="flex flex-col items-center justify-center h-full">
+                    <div className="w-12 h-12 md:w-16 md:h-16 mb-3 md:mb-4 flex items-center justify-center">
+                      <Download className="w-8 h-8 md:w-12 md:h-12 text-gray-400" />
                     </div>
-
                     {cvFile ? (
                       <div>
-                        <p className="text-green-600 font-medium mb-2">✓ Fichier sélectionné</p>
-                        <p className="text-sm text-gray-600">{cvFile.name}</p>
+                        <p className="text-green-600 font-medium mb-2 text-sm md:text-base">✓ Fichier sélectionné</p>
+                        <p className="text-xs md:text-sm text-gray-600 break-all px-2">{cvFile.name}</p>
                       </div>
                     ) : (
-                      <div>
-                        <p className="text-lg font-medium text-gray-500 mb-3">Glissez / déposez votre CV</p>
-                        <p className="text-sm text-gray-500 leading-relaxed max-w-md">
+                      <div className="px-4">
+                        <p className="text-base md:text-lg font-medium text-gray-500 mb-2 md:mb-3">
+                          Glissez / déposez votre CV
+                        </p>
+                        <p className="text-xs md:text-sm text-gray-500 leading-relaxed max-w-xs md:max-w-md mx-auto">
                           Le format PDF est préconisé (max 2 Mo). Les formats jpg/jpeg/png peuvent être utilisés.
                         </p>
                       </div>
@@ -235,11 +236,11 @@ export default function CreerSection() {
                 </div>
 
                 {/* Bouton d'envoi */}
-                <div className="pt-4 pl-135">
+                <div className="pt-4 text-center lg:text-left lg:pl-32">
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="bg-slate-800 text-white py-4 px-8 rounded-full font-medium hover:bg-slate-700 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+                    className="w-full md:w-auto bg-slate-800 text-white py-3 md:py-4 px-6 md:px-8 rounded-full font-medium hover:bg-slate-700 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 text-sm md:text-base"
                   >
                     {isSubmitting ? (
                       <>
