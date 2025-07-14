@@ -105,16 +105,22 @@ className={`transition-colors text-md font-bold mt-2 ${
               >
                 Nous rejoindre
               </Link>
-               <Link
-              href="/contact"
-              className="bg-[#042433] text-white text-xs px-6 py-3 rounded-full flex items-center gap-1 hover:bg-opacity-90 ml-40 font-bold transition-all"
-            >
-              Découvrez pprimer
-              <div className="bg-[#ffffff] w-6 h-6 rounded-2xl ml-2 flex items-center  ">
-                <ArrowUpRight className="w-4 h-4 text-[#002639] ml-1" />
-              </div>
-              
-            </Link>
+        <Link
+          href="/contact"
+          className="bg-[#ffffff] text-[#002639] text-xs px-6 py-3 rounded-full flex items-center gap-1 font-bold transition-all group
+                     hover:bg-[#3da5d9] hover:text-white"
+        >
+          Découvrez pprimer
+          <div
+            className="bg-[#002639] border border-white w-6 h-6 rounded-2xl ml-2  flex items-center justify-center transition-all
+                       group-hover:bg-[#ffffff] group-hover:border-none"
+          >
+            <ArrowUpRight
+              className="w-4 h-4 text-white transition-transform duration-300 rotate-45
+                         group-hover:rotate-0 group-hover:text-[#3da5d9]"
+            />
+          </div>
+        </Link>
             </div>
            
           </div>
@@ -163,13 +169,27 @@ className={`transition-colors text-sm ${
               >
                 Nous rejoindre
               </Link>
-              <Link
-                href="/contact"
-                className="bg-[#042433] text-white text-xs px-3 py-1.5 rounded-full flex items-center w-fit gap-1 hover:bg-opacity-90 transition-all"
-              >
-                Découvrez pprime
-                <ArrowUpRight className="w-3 h-3" />
-              </Link>
+              
+
+
+
+                      <Link
+          href="/contact"
+          className="bg-[#ffffff] text-[#002639] text-xs px-3 py-1.5 rounded-full flex items-center w-fit gap-1 font-bold transition-all group
+                     hover:bg-[#3da5d9] hover:text-white"
+        >
+          Découvrez pprimer
+          <div
+            className="bg-[#002639] border border-white w-6 h-6 rounded-2xl ml-2  flex items-center justify-center transition-all
+                       group-hover:bg-[#ffffff] group-hover:border-none"
+          >
+            <ArrowUpRight
+              className="w-3 h-3 text-white transition-transform duration-300 rotate-45
+                         group-hover:rotate-0 group-hover:text-[#3da5d9]"
+            />
+          </div>
+        </Link>
+
             </div>
           </div>
         )}

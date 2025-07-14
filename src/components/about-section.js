@@ -24,15 +24,25 @@ export default function AboutSection() {
               Pprime œuvre dans le domaine des installations électriques destinées aux secteurs agricole,
               agroalimentaire, tertiaire et industriel.
             </p>
-            <Link
-              href="/a-propos"
-              className="inline-flex items-center gap-3 bg-white text-[#042433] px-8 py-4 rounded-full font-semibold hover:bg-opacity-90 transition-all"
-            >
-              Découvrez pprime
-              <div className="bg-[#042433] w-8 h-8 rounded-full flex items-center justify-center">
-                <ArrowUpRight className="w-4 h-4 text-white" />
-              </div>
-            </Link>
+
+
+                    <Link
+          href="/contact"
+          className="bg-[#ffffff] text-[#002639]  px-8 py-4 rounded-full inline-flex items-center gap-3 font-semibold transition-all group
+                     hover:bg-[#3da5d9] hover:text-white"
+        >
+          Découvrez pprimer
+          <div
+            className="bg-[#002639] border border-white w-8 h-8 rounded-full flex items-center justify-center transition-all
+                       group-hover:bg-[#ffffff] group-hover:border-none"
+          >
+            <ArrowUpRight
+              className="w-4 h-4 text-white transition-transform duration-300 rotate-45
+                         group-hover:rotate-0 group-hover:text-[#3da5d9]"
+            />
+          </div>
+        </Link>
+
           </div>
         </div>
       </div>
