@@ -28,7 +28,7 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "src/components/animated-sectors-section.js", "src/components/sectors-section.js"  ],
   "exclude": [
     "node_modules"
   ]

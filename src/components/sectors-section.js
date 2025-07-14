@@ -1,81 +1,119 @@
+
+
+"use client"
+
 import Image from "next/image"
-import Link from "next/link"
+import { useEffect, useState } from "react"
+
+const sectors = [
+  {
+    title: "Infrastructures & Industrie",
+    description:
+      "Services d'installation, de distribution, d'éclairage, d'automatisation, de sécurité électrique, de maintenance et d'efficacité énergétique pour soutenir le bon fonctionnement et la durabilité des sites industriels et des infrastructures critiques.",
+    image: "/images/sectors/infrastructures.jpg",
+    imageBg: "/images/sectors/about-background.jpg",
+  },
+  {
+    title: "Agriculture & Agroalimentaire",
+    description:
+      "Services d'installation, d'éclairage et d'automatisation adaptés aux besoins agricoles. Nous assurons également la sécurité électrique, fournissons des solutions d'alimentation pour les équipements et intégrons des énergies renouvelables, contribuant ainsi à l'efficacité et à la durabilité des exploitations.",
+         image: "/images/sectors/agriculture.jpg",
+        imageBg: "/images/sectors/hero-eolienne.jpg",
+  },
+  {
+    title: "Green Tech",
+    description:
+      "Des services axés sur les énergies renouvelables, l'efficacité énergétique et les technologies intelligentes pour promouvoir la durabilité et la transition vers un avenir énergétique propre.",
+
+        image: "/images/sectors/green-tech.jpg",
+        imageBg: "/images/sectors/p-dever.jpg",
+  },
+  {
+    title: "Tertiaire",
+    description:
+      "Des services spécialisés pour garantir la sécurité, la fiabilité, l'efficacité énergétique et la continuité des opérations dans les établissements touristiques, les hôpitaux, les cliniques et autres installations de santé.",
+     image: "/images/sectors/tertiaire.jpg",
+        imageBg: "/images/sectors/p-health.jpg",
+  },
+]
+
+
 
 export default function SectorsSection() {
-  const sectors = [
-    {
-      title: "Infrastructures & Industrie",
-      description:
-        "Services d'installation, de distribution, d'éclairage, d'automatisation, de sécurité électrique, de maintenance et d'efficacité énergétique pour soutenir le bon fonctionnement et la durabilité des sites industriels et des infrastructures critiques.",
-      image: "/images/sectors/infrastructures.jpg",
-      link: "/secteurs-activite/infrastructures",
-    },
-    {
-      title: "Agriculture & Agroalimentaire",
-      description:
-        "Services d'installation, d'éclairage et d'automatisation adaptés aux besoins agricoles. Nous assurons également la sécurité électrique, fournissons des solutions d'alimentation pour les équipements et intégrons des énergies renouvelables, contribuant ainsi à l'efficacité et à la durabilité des exploitations.",
-      image: "/images/sectors/agriculture.jpg",
-      link: "/secteurs-activite/agriculture",
-    },
-    {
-      title: "Green Tech",
-      description:
-        "Des services axés sur les énergies renouvelables, l'efficacité énergétique et les technologies intelligentes pour promouvoir la durabilité et la transition vers un avenir énergétique propre.",
-      image: "/images/sectors/green-tech.jpg",
-      link: "/secteurs-activite/green-tech",
-    },
-    {
-      title: "Tertiaire",
-      description:
-        "Des services spécialisés pour garantir la sécurité, la fiabilité, l'efficacité énergétique et la continuité des opérations dans les établissements touristiques, les hôpitaux, les cliniques et autres installations de santé.",
-      image: "/images/sectors/tertiaire.jpg",
-      link: "/secteurs-activite/tertiaire",
-    },
-  ]
+  const [activeIndex, setActiveIndex] = useState(0)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const idx = Number.parseInt(entry.target.getAttribute("data-index") || "0", 10)
+          if (entry.isIntersecting) {
+            setActiveIndex(idx)
+          }
+        })
+      },
+      { threshold: 0.5}, 
+    )
+
+    document.querySelectorAll(".scroll-section").forEach((el) => observer.observe(el))
+
+    return () => observer.disconnect()
+  }, [])
 
   return (
-    <section className="py-120 md:py-60 lg:py-20">
-      <div className="max-w-[1220px] mx-auto px-6">
-        <div className="text-center mb-10">
-          <h2 className="text-3xl font-bold text-[#042433] mb-2">Secteurs d'activité</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">Ensemble, pour un monde plus lumineux, vert et intelligent.</p>
-        </div>
+    <div className="relative w-full">
+      {/* Dynamic Background Image */}
+      <div className="fixed inset-0 -z-10 transition-opacity duration-700">
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-white to-transparent" />
+        {sectors.map((sector, idx) => (
+          <Image
+            key={idx}
+            src={sector.imageBg || "/placeholder.svg"}
+            alt=""
+            fill
+            className={`object-cover transition-opacity duration-700 ${
+              activeIndex === idx ? "opacity-100" : "opacity-0"
+            }`}
+          />
+        ))}
+      </div>
 
-        {/* Grille responsive */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-          {sectors.map((sector, index) => (
-            <Link
-              key={index}
-              href={sector.link}
-              className="group block border border-gray-200 hover:shadow-lg transition-shadow duration-300"
-            >
-              {/* Layout mobile : vertical, desktop : horizontal */}
-              <div className="flex flex-col md:flex-row h-auto md:h-[340px]">
+      {/* Scrollable Foreground Content */}
+      <div className="relative z-10">
+        {sectors.map((sector, index) => (
+          <section
+            key={index}
+            data-index={index}
+            className="scroll-section min-h-[120vh] flex items-center justify-center px-6 py-1"
+          >
+            <div className="max-w-6xl mx-auto px-6 py-20">
+              <div
+                className={`bg-[#EBF2F7] shadow-2xl grid grid-cols-1 md:grid-cols-3 gap-4 p-8 rounded-lg
+                  transition-all duration-700 ease-out
+                  ${activeIndex === index ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}
+                  max-w-4xl w-full h-[auto] md:h-[400px] md:w-[800px]`}
+              >
                 {/* Image */}
-                <div className="w-full md:w-1/3 bg-[#e6f0f5] p-4 flex items-center justify-center min-h-[200px] md:min-h-0">
-                  <div className="relative w-full h-full max-w-[200px] md:max-w-none">
-                    <Image
-                      src={sector.image || "/placeholder.svg?height=200&width=200"}
-                      alt={sector.title}
-                      fill
-                      className="object-contain"
-                      priority={index < 2}
-                    />
-                  </div>
+                <div className="flex justify-center items-center p-4">
+                  <Image
+                    src={sector.image || "/placeholder.svg"}
+                    alt={sector.title}
+                    width={800}
+                    height={800}
+                    className="object-contain"
+                  />
                 </div>
-
-                {/* Contenu texte */}
-                <div className="w-full md:w-2/3 bg-gray-50 p-6 flex flex-col justify-center">
-                  <h3 className="text-xl font-bold text-[#042433] mb-4 group-hover:text-[#0a5a73] transition-colors">
-                    {sector.title}
-                  </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">{sector.description}</p>
+                {/* Text */}
+                <div className="flex flex-col justify-center col-span-2 space-y-30">
+                  <h2 className="text-3xl font-bold  text-center text-[#042433]">{sector.title}</h2>
+                  <p className="text-[#787F82] text-lg text-center leading-relaxed">{sector.description}</p>
                 </div>
               </div>
-            </Link>
-          ))}
-        </div>
+            </div>
+          </section>
+        ))}
       </div>
-    </section>
+    </div>
   )
 }
