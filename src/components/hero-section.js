@@ -2,7 +2,7 @@ import Image from "next/image"
 
 export default function HeroSection() {
   return (
-    <div className="relative w-full h-[calc(130vh-100px)] bg-white">
+    <div className="relative w-full h-[calc(150vh-100px)] md:h-[calc(130vh-100px)] bg-white">
       {/* Image de fond */}
       <div className="relative w-full top-0 h-[100vh]">
         <Image

@@ -42,7 +42,7 @@ export default function TestimonialsSection() {
   return (
     <section className="py-20 bg-white">
       <div className="max-w-[1220px] mx-auto px-6">
-        <div className="flex flex-col lg:flex-row items-start gap-12">
+        <div className="flex flex-col lg:flex-row items-start gap-20">
           {/* Contenu texte à gauche - sur mobile devient le contenu principal */}
           <div className="w-full lg:w-1/2">
             <h2 className="text-3xl lg:text-4xl font-bold text-[#042433] mb-6">
@@ -55,7 +55,6 @@ export default function TestimonialsSection() {
               dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
               ea commodo consequat.
             </p>
-
             {/* Navigation desktop uniquement */}
             <div className="hidden lg:flex items-center gap-4">
               <button
@@ -76,19 +75,36 @@ export default function TestimonialsSection() {
           </div>
 
           {/* Photo et témoignage à droite */}
-          <div className="w-full lg:w-1/2">
-            {/* Version desktop avec image */}
-            <div className="hidden lg:flex bg-white rounded-lg shadow-lg overflow-hidden items-stretch">
-              <div className="flex-shrink-0">
-                <Image
-                  src={testimonials[currentTestimonial].image || "/placeholder.svg?height=250&width=200"}
-                  alt={testimonials[currentTestimonial].name}
-                  width={200}
-                  height={250}
-                  className="object-cover w-full h-full"
-                />
+          <div className="w-full lg:w-1/1 relative ">
+            {/* Wrapper pour la transition */}
+            <div
+              key={currentTestimonial} 
+              className="transition-opacity duration-2000 ease-in-out opacity-100"
+            >
+              {/* Version desktop avec image */}
+              <div className="hidden lg:flex bg-white max-h-[300px] max-w-[800px]  shadow-lg overflow-hidden items-stretch">
+                <div className="flex-shrink-0">
+                  <Image
+                    src={testimonials[currentTestimonial].image || "/placeholder.svg?height=250&width=200"}
+                    alt={testimonials[currentTestimonial].name}
+                    width={200}
+                    height={250}
+                    className="object-cover w-full h-full"
+                  />
+                </div>
+                <div className="bg-[#B0C6CE] p-6 flex-1 flex flex-col justify-center min-h-[250px]">
+                  <p className="text-white leading-relaxed mb-4 text-sm">
+                    {testimonials[currentTestimonial].content}
+                  </p>
+                  <div>
+                    <h4 className="font-bold text-white text-base">{testimonials[currentTestimonial].name}</h4>
+                    <p className="text-white text-xs">{testimonials[currentTestimonial].role}</p>
+                  </div>
+                </div>
               </div>
-              <div className="bg-[#B0C6CE] p-6 flex-1 flex flex-col justify-center">
+
+              {/* Version mobile sans image */}
+              <div className="lg:hidden bg-[#B0C6CE] p-6 rounded-lg min-h-[250px]">
                 <p className="text-[#042433] leading-relaxed mb-4 text-sm">
                   {testimonials[currentTestimonial].content}
                 </p>
@@ -96,15 +112,6 @@ export default function TestimonialsSection() {
                   <h4 className="font-bold text-[#042433] text-base">{testimonials[currentTestimonial].name}</h4>
                   <p className="text-[#042433]/70 text-xs">{testimonials[currentTestimonial].role}</p>
                 </div>
-              </div>
-            </div>
-
-            {/* Version mobile sans image */}
-            <div className="lg:hidden bg-[#B0C6CE] p-6 rounded-lg">
-              <p className="text-[#042433] leading-relaxed mb-4 text-sm">{testimonials[currentTestimonial].content}</p>
-              <div>
-                <h4 className="font-bold text-[#042433] text-base">{testimonials[currentTestimonial].name}</h4>
-                <p className="text-[#042433]/70 text-xs">{testimonials[currentTestimonial].role}</p>
               </div>
             </div>
 
@@ -127,7 +134,6 @@ export default function TestimonialsSection() {
                 </button>
               </div>
             </div>
-
             {/* Indicateurs de pagination */}
             <div className="flex justify-center mt-6 gap-2">
               {testimonials.map((_, index) => (

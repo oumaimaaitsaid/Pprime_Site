@@ -34,11 +34,11 @@ export default function AboutSection() {
           Découvrez pprimer
           <div
             className="bg-[#002639] border border-white w-8 h-8 rounded-full flex items-center justify-center transition-all
-                       group-hover:bg-[#ffffff] group-hover:border-none"
+                       group-hover:bg-[#3da5d9] group-hover:border-white"
           >
             <ArrowUpRight
               className="w-4 h-4 text-white transition-transform duration-300 rotate-45
-                         group-hover:rotate-0 group-hover:text-[#3da5d9]"
+                         group-hover:rotate-0 group-hover:text-[#ffffff]"
             />
           </div>
         </Link>
