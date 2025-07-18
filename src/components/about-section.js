@@ -26,8 +26,10 @@ export default function AboutSection() {
             </p>
 
 
-                    <Link
-          href="/contact"
+              <a
+  href="https://www.linkedin.com/company/p-prime/posts/?feedView=all"
+  target="_blank"
+  rel="noopener noreferrer"
           className="bg-[#ffffff] text-[#002639]  px-8 py-4 rounded-full inline-flex items-center gap-3 font-semibold transition-all group
                      hover:bg-[#3da5d9] hover:text-white"
         >
@@ -41,7 +43,7 @@ export default function AboutSection() {
                          group-hover:rotate-0 group-hover:text-[#ffffff]"
             />
           </div>
-        </Link>
+        </a>
 
           </div>
         </div>

@@ -43,8 +43,10 @@ export default function HeroSection() {
             </p>
 
             
-            <Link
-          href="/contact"
+           <a
+  href="https://www.linkedin.com/company/p-prime/posts/?feedView=all"
+  target="_blank"
+  rel="noopener noreferrer"
           className="bg-[#ffffff] text-[#002639] text-xs px-6 py-3 rounded-full inline-flex  items-center gap-1 font-bold transition-all group
                      hover:bg-[#3da5d9] hover:text-white"
         >
@@ -58,7 +60,7 @@ export default function HeroSection() {
                          group-hover:rotate-0 group-hover:text-[#ffffff]"
             />
           </div>
-        </Link>
+        </a>
           </div>
         </div>
       </div>    </div>

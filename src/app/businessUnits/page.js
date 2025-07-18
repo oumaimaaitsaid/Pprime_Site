@@ -1,13 +1,13 @@
 import HeroSection from "../../components/hero-section"
 import SectorsSection from "../../components/sectors-section"
-import PprimeSolutions from "../../components/pprime-solutions"
+import PartnersSection from "../../components/partners-section"
 
 export default function HomePage() {
   return (
     <main>
       <HeroSection />
       <SectorsSection />
-      <PprimeSolutions />
+      <PartnersSection/>
     </main>
   )
 }

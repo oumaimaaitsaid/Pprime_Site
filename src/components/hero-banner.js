@@ -29,9 +29,10 @@ export default function HeroBanner() {
             <p className=" md:block mb-6 text-center md:text-start">
              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
             </p>
-        <Link
-          href="/contact"
-          className="bg-[#ffffff] text-[#002639] text-xs px-6 py-3 rounded-full flex items-center gap-1 font-bold transition-all group
+<a
+  href="https://www.linkedin.com/company/p-prime/posts/?feedView=all"
+  target="_blank"
+  rel="noopener noreferrer"          className="bg-[#ffffff] text-[#002639] text-xs px-6 py-3 rounded-full flex items-center gap-1 font-bold transition-all group
                      hover:bg-[#3da5d9] hover:text-white"
         >
           Découvrez pprimer
@@ -44,7 +45,7 @@ export default function HeroBanner() {
                          group-hover:rotate-0 group-hover:text-[#ffffff]"
             />
           </div>
-        </Link>
+        </a>
 
           </div>
         </div>

@@ -73,13 +73,12 @@ export default function TestimonialsSection() {
               </button>
             </div>
           </div>
-
           {/* Photo et témoignage à droite */}
-          <div className="w-full lg:w-1/1 relative ">
+           <div className="w-full lg:w-1/1 relative ">
             {/* Wrapper pour la transition */}
             <div
               key={currentTestimonial} 
-              className="transition-opacity duration-2000 ease-in-out opacity-100"
+              className="transition-opacity duration-2000 ease-in-out opacity-100 overflow-hidden items-stretch animate-slide-in-from-right-custom "
             >
               {/* Version desktop avec image */}
               <div className="hidden lg:flex bg-white max-h-[300px] max-w-[800px]  shadow-lg overflow-hidden items-stretch">

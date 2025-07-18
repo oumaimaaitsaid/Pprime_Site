@@ -115,3 +115,18 @@
 .btn-primary:hover {
   opacity: 0.9;
 }
+/* Custom animation for slide-in from right */
+@keyframes slide-in-from-right-custom {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-in-from-right-custom {
+  animation: slide-in-from-right-custom 2s ease-out forwards;
+}
