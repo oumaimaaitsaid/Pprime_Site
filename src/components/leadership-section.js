@@ -29,14 +29,20 @@ export default function LeadershipSection() {
   }, [])
 
   return (
-    <section id="leadership-section" className="flex min-h-[500px] lg:min-h-[800px]">
-      {/* Photo à gauche - 50% */}
-      <div className="w-1/2 relative">
-        <Image src="/images/leadership/ceo-photo.jpg" alt="Dirigeant Pprime" fill className="object-cover" priority />
-      </div>
-
-      {/* Contenu à droite - 50% */}
-      <div className="w-1/2 bg-[#042433] text-white px-8 py-12 lg:px-16 lg:py-16 flex flex-col justify-center">
+    <section
+      id="leadership-section"
+      className="flex flex-col lg:flex-row min-h-[500px] lg:min-h-[800px]" // flex-col for mobile, flex-row for large screens
+    >
+      {/* Photo à gauche / en haut pour mobile */}
+      <div className="w-full  lg:w-1/2 relative h-[700px] lg:h-auto">
+        {" "}
+        {/* w-full for mobile, w-1/2 for large screens, added height for mobile image */}
+  <Image src="/images/leadership/ceo-photo.jpg" alt="Dirigeant Pprime" fill className="object-cover" priority />
+        </div>
+      {/* Contenu à droite / en bas pour mobile */}
+      <div className="w-full lg:w-1/2 bg-[#042433] text-white px-8 py-12 lg:px-16 lg:py-16 flex flex-col justify-center">
+        {" "}
+        {/* w-full for mobile, w-1/2 for large screens */}
         <div
           className={`transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
         >
@@ -44,7 +50,6 @@ export default function LeadershipSection() {
             Nous avons un impact positif
             <br />à travers le Maroc et au-delà.
           </h2>
-
           <div className="space-y-6">
             <div>
               <h3 className="text-base lg:text-lg font-bold mb-3 text-white">Stratégie et gouvernance</h3>
@@ -55,15 +60,12 @@ export default function LeadershipSection() {
                 l'efficacité énergétique et favorise des solutions durables.
               </p>
             </div>
-
             <div>
               <h3 className="text-base lg:text-lg font-bold text-white">Leadership</h3>
             </div>
-
             <div>
               <h3 className="text-base lg:text-lg font-bold text-white">Priorités et partenariats</h3>
             </div>
-
             <div>
               <h3 className="text-base lg:text-lg font-bold text-white">Priorités et partenariats</h3>
             </div>

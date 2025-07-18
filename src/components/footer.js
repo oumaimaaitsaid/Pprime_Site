@@ -74,10 +74,10 @@ export default function Footer() {
             </li>
             <li>
               <Link
-                href="/offres"
+                href="/businessUnits"
                 className="text-[#3da5d9] hover:text-[#2c8bb3] transition-colors flex items-center gap-2"
               >
-                • Offres
+                • business Units
               </Link>
             </li>
             <li>
@@ -104,22 +104,22 @@ export default function Footer() {
           <h3 className="text-xl font-semibold mb-6 text-[#042433]">Secteurs D'activité</h3>
           <ul className="space-y-3">
             <li>
-              <Link href="#" className="text-[#3da5d9] hover:text-[#2c8bb3] transition-colors flex items-center gap-2">
+              <Link href="/businessUnits" className="text-[#3da5d9] hover:text-[#2c8bb3] transition-colors flex items-center gap-2">
                 • Agriculture & Agroalimentaire
               </Link>
             </li>
             <li>
-              <Link href="#" className="text-[#3da5d9] hover:text-[#2c8bb3] transition-colors flex items-center gap-2">
+              <Link href="/businessUnits" className="text-[#3da5d9] hover:text-[#2c8bb3] transition-colors flex items-center gap-2">
                 • Infrastructures & Industrie
               </Link>
             </li>
             <li>
-              <Link href="#" className="text-[#3da5d9] hover:text-[#2c8bb3] transition-colors flex items-center gap-2">
+              <Link href="/businessUnits" className="text-[#3da5d9] hover:text-[#2c8bb3] transition-colors flex items-center gap-2">
                 • Tourisme & Santé
               </Link>
             </li>
             <li>
-              <Link href="#" className="text-[#3da5d9] hover:text-[#2c8bb3] transition-colors flex items-center gap-2">
+              <Link href="/businessUnits" className="text-[#3da5d9] hover:text-[#2c8bb3] transition-colors flex items-center gap-2">
                 • Green Tech
               </Link>
             </li>
