@@ -105,7 +105,7 @@ export default function SectorsSection() {
                   />
                 </div>
                 {/* Text */}
-                <div className="flex flex-col justify-center col-span-2 space-y-30">
+                <div className="flex flex-col justify-center col-span-2 space-y-15">
                   <h2 className="text-3xl font-bold  text-center text-[#042433]">{sector.title}</h2>
                   <p className="text-[#787F82] text-lg text-center leading-relaxed">{sector.description}</p>
                 </div>

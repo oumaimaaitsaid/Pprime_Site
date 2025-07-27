@@ -81,14 +81,14 @@ function StatsSection() {
 
   return (
     <section
-      id="stats-section" // Had l'ID mohim bach l'IntersectionObserver ikhdem
+      id="stats-section" 
       className="bg-[#042433] text-gray-200 border-t border-[#0a3549] w-full"
     >
       <div className="mx-auto my-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 max-w-[1200px] gap-0">
         {stats.map((stat, index) => (
           <div key={index} className={`py-8 text-center border-[#0a3549] ${stat.borders}`}>
             <p className="text-base sm:text-lg mb-4 sm:mb-6 text-gray-500 font-bold">{stat.label}</p>
-            <p className="text-4xl sm:text-5xl font-bold">
+            <p className="text-4xl sm:text-5xl font-bold mb-3">
               <span
                 className={`transition-all duration-1000 ${isVisible ? "opacity-100" : "opacity-0"}`}
                 style={{
@@ -125,9 +125,9 @@ export default function HeroSection() {
         className="absolute bottom-0 left-5 right-5 w-auto
                    sm:left-8 sm:right-8
                    md:left-12 md:right-12
-                   lg:max-w-[1300px] lg:mx-auto lg:left-[100px] lg:right-[70px] lg:w-full"
+                   lg:max-w-[1220px] lg:mx-auto lg:left-[100px] lg:right-[70px] lg:w-full"
       >
-        <StatsSection /> {/* Ndekhlo StatsSection hna */}
+        <StatsSection /> 
       </div>
     </div>
   )

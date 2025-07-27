@@ -7,7 +7,7 @@ export default function Stats() {
 
   const stats = [
     {
-      number: "420", 
+      number: "420",
       suffix: "+",
       label: "Villes du monde entier",
     },

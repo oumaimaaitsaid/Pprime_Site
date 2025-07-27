@@ -84,11 +84,11 @@ export default function TestimonialsSection() {
               <div className="hidden lg:flex bg-white max-h-[300px] max-w-[800px]  shadow-lg overflow-hidden items-stretch">
                 <div className="flex-shrink-0">
                   <Image
-                    src={testimonials[currentTestimonial].image || "/placeholder.svg?height=250&width=200"}
+                    src={testimonials[currentTestimonial].image || "/placeholder.svg?height=300&width=200"}
                     alt={testimonials[currentTestimonial].name}
                     width={200}
-                    height={250}
-                    className="object-cover w-full h-full"
+                    height={300}
+                    className="object-cover w-full h-[400px]"
                   />
                 </div>
                 <div className="bg-[#B0C6CE] p-6 flex-1 flex flex-col justify-center min-h-[250px]">

@@ -129,7 +129,7 @@ export default function Footer() {
         {/* Contact */}
         <div>
           <h3 className="text-xl font-semibold mb-6 text-[#042433]">Contactez-nous</h3>
-          <ul className="space-y-4">
+          <ul className="space-y-3">
             <li className="flex items-start gap-3">
               <Phone className="h-5 w-5 text-gray-700 mt-0.5" />
               <span className="text-gray-700">+212 5 28 83 20 15</span>
@@ -139,8 +139,8 @@ export default function Footer() {
               <span className="text-gray-700">contact@pprime.ma</span>
             </li>
             <li className="flex items-start gap-3">
-              <MapPin className="h-5 w-5 text-gray-700 mt-0.5" />
-              <span className="text-gray-700">Galeries Marmouria, Av Hassan Bourqamani, Cité Dakhla – Agadir</span>
+              <MapPin className="h-12 w-12 text-gray-700 " />
+              <span className="text-gray-700 ">Galeries Marmouria, Av Hassan Bourqamani, Cité Dakhla – Agadir</span>
             </li>
           </ul>
         </div>
